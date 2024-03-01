@@ -39,8 +39,7 @@ SQL Server Reporting Services (SSRS) generates comprehensive reports, offering i
 
 - Website:
 A user-friendly website is developed using ASP.NET Core 6 MVC, providing a platform for accessing and interacting with the database system using EF Core and make website views (UI) using HTML, CSS, and JS.
-
-In this project, we created an online exam system where students can log in with their email and password provided by ITI and saved in the database before. After logging in, the exam instructions page will appear with all details related to the exam. Then, the student will be redirected to the exam  page with a timer set to 30 minutes and 10 questions. After submitting the exam, the student will be directed to the grade page with the student's full name, grade percentage, and exam status. If the 
+- In this project, we created an online exam system where students can log in with their email and password provided by ITI and saved in the database before. After logging in, the exam instructions page will appear with all details related to the exam. Then, the student will be redirected to the exam  page with a timer set to 30 minutes and 10 questions. After submitting the exam, the student will be directed to the grade page with the student's full name, grade percentage, and exam status. If the 
 student does not answer any questions and the exam time expires, the exam will be submitted  automatically, and the student will be directed to the grade page with a grade of 0.0% and a status of failed.
 
 - Dashboards:
