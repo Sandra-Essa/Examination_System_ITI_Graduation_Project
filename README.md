@@ -5,7 +5,6 @@
 - [DataBase Design](#DataBase-Design)
     - [ERD](#ERD)
     - [Mapping Schema](#Mapping-Schema)
-- [Stored Procedures](#Stored-Procedures)
 - [Data Warehouse](#Data-Warehouse)
     - [Snowflake Schema](#Snowflake-Schema)
     - [DWH Implementation](#DWH-Implementation)
@@ -17,6 +16,33 @@
 
 ## Description
 
+- Project Overview:
+This project focuses on developing a comprehensive database management system aimed at streamlining operations within the educational institution, specifically the Information Technology Institute (ITI). It comprises various components including entity relationship diagrams (ERD), mapping, database implementation, and the creation of stored procedures for all tables in the database. Additionally, it involves the development of stored procedures for exam management, data warehousing utilizing snowflake diagrams, and the implementation of the Data Warehouse (DWH) using SQL Server Integration Services (SSIS). Moreover, the project includes the establishment of reporting functionalities using SQL Server Reporting Services (SSRS), alongside the development of a user-friendly website and dashboards for improved data visualization and analysis.
+
+- Business Case:
+This project aims to address the need for a robust database system tailored to meet the specific requirements of educational institutions. By centralizing data management and providing extensive reporting capabilities, it seeks to enhance decision-making processes and overall operational efficiency.
+
+- ERD and Mapping:
+The entity relationship diagram (ERD) illustrates the database schema, highlighting the relationships between various entities such as students, instructors, courses, exams, and more. Mapping visualizes data relationships within the database structure, facilitating understanding and analysis.
+
+- Stored Procedures:
+Stored procedures are developed to streamline data manipulation and reporting functionalities. These include basic stored procedures (Insert, Select, Update, Delete) totaling 78, alongside specialized procedures for exam generation, exam answers, and exam correction.
+
+- Data Warehouse:
+This project incorporates data warehousing principles, including slowly changing dimensions (SCD) and column tracking techniques, to effectively manage changes to dimension attributes over time.
+
+- Snowflake Diagram:
+The snowflake diagram provides a hierarchical view of the database schema, showcasing the denormalization of data and relationships between tables.
+
+- SSRS Reports:
+SQL Server Reporting Services (SSRS) generates comprehensive reports, offering insights into various aspects of the educational institution's operations. A total of 6 reports are generated, covering information such as student details, grades, course topics, exam questions, and more.
+
+- Website:
+A user-friendly website is developed using ASP.NET Core, providing a platform for accessing and interacting with the database system.
+
+- Dashboards:
+Dashboards are created using Microsoft Power BI Desktop to visualize data trends and insights. With a total of 30 dashboards, including tooltips, drill-through capabilities, filters, and a dashboard for information sourced from students' Facebook accounts, users are empowered with actionable information for decision-making.
+
 
 ## DataBase Design
 
@@ -26,7 +52,6 @@
 ### Mapping Schema
 ![Demo Sample](https://github.com/Sandra-Essa/Examination_System_ITI_Graduation_Project/blob/main/Media/MappingDB.png)
 
-## Stored Procedures
 
 ## Data Warehouse
 
@@ -50,6 +75,8 @@
 
 ## Dashboards
 ![Demo Sample](https://github.com/Sandra-Essa/Examination_System_ITI_Graduation_Project/blob/main/Media/ITI_Examination_System.gif)
+
+![Demo Sample](https://github.com/Sandra-Essa/Examination_System_ITI_Graduation_Project/blob/main/Media/Facebook.png)
 
 
 ## Tools
