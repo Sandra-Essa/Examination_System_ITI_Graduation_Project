@@ -2,7 +2,7 @@
 
 /*Entities Tables*/
 
-/*Branches*/****************************Done_14 Records
+/*Branches*/
 create table Branches(
 Branch_ID int  primary key,
 B_Name  varchar(100),
@@ -10,9 +10,8 @@ B_Location  varchar(100),
 Founding_date date,
 MngrName varchar(100)
 )
-///////////////////////////////////
-
-/*Question*/ ----Done by dalia 100 rows---
+----------------------------------------------------------
+/*Question*/ 
 create table Questions(
 Question_ID int primary key,
 Question_Text  varchar(250),
@@ -25,11 +24,8 @@ constraint course_fk foreign key(Course_ID) references Courses(Course_ID),
 constraint exam_fk foreign key(Exam_ID) references Exams (Exam_ID)
 )
 
-
-
-
-/////////////////////////////////////////
-/*Question_Choices*/ --done by dalia
+-----------------------------------------------------------------------
+/*Question_Choices*/ 
 create table Question_Choices(
 Question_ID int,
 Choice varchar(250),
@@ -37,41 +33,40 @@ constraint C23 foreign key(Question_ID) references Questions(Question_ID),
 constraint C24 primary key (Choice,Question_ID),
 constraint C25 unique (Choice, Question_ID)
 )
-//////////////////////////////////////////////////////////
+-------------------------------------------------------------
 
-/*Faculty*/**********************************Done_301 records
+/*Faculty*/
 create table Faculty(
 Fcode varchar(200)   primary key,
 Fname  varchar(250),
 FLocation varchar(250),
 )
 
-
-///////////////////////////////////////
-/*Student_address*/*********************************Done_451 records
+----------------------------------------------------------------------------
+/*Student_address*/
 create table Student_address(
 ZipCode int  primary key,
 City varchar(250),
 Street varchar(250)
 )
-///////////////////////
-/*Instructor_address*/*************************************Done_200 records
+-----------------------------------------------------------
+/*Instructor_address*/
 create table Instructor_address(
 ZipCode int   primary key,
 City varchar(250),
 Street varchar(250)
 )
-///////////////////////////
-/*Gradute_company*/***********************************Done_163 records
+---------------------------------------------------------------------
+/*Gradute_company*/
 create table Graduate_company(
 Company_code varchar(250)  primary key,
 Company_name  varchar(250),
 Company_Location  varchar(250),
 )
 
-drop table gradute_company
-////////////////////////////////////////////
-/*Instructors*/****************************************Done_199 records
+
+------------------------------------------------------
+/*Instructors*/
 create table Instructors(
 Inst_ID int  primary key,
 Inst_Fname  varchar(250),
@@ -93,8 +88,8 @@ constraint C5 foreign key(Branch_ID) references Branches(Branch_ID),
 constraint C6 foreign key(ZipCode) references Instructor_address(ZipCode)
 
 )
-///////////////////////////////////////////////////////////////////
-/*Instructor Phone*/************************************Done_199 records
+---------------------------------------------------------------------
+/*Instructor Phone*/
 create table Instructor_Phone(
 Inst_ID int,
 Phone varchar(20),
@@ -102,8 +97,8 @@ constraint C7 foreign key(Inst_ID) references Instructors(Inst_ID),
 constraint C8 primary key (Inst_ID,Phone),
 constraint C9 unique (Inst_ID,Phone)
 )
-/////////////////////////////////////////
-/*Courses*/ --- done by sandra 199 rows
+------------------------------------------------------------------
+/*Courses*/
 create table Courses(
 Course_ID int primary key,
 Course_Name  varchar(250),
@@ -113,9 +108,9 @@ Course_Evaluation varchar(250),
 Inst_ID int,
 constraint C12 foreign key(Inst_ID) references Instructors(Inst_ID)
 )
-///////////////////////////////////////////////
+-------------------------------------------------------------
 /*Exams*/
-Create table Exams( ----done by dalia
+Create table Exams( 
 Exam_ID int primary key,
 Exam_Level varchar(50) check (Exam_Level= 'Basic' or Exam_Level= 'Intermediate' or Exam_Level= 'Advanced'),
 Exam_Type varchar(50) check (Exam_Type = 'Offline' or Exam_Type= 'Online'),
@@ -127,16 +122,16 @@ Course_ID int,
 constraint C17 foreign key(Course_ID) references Courses(Course_ID)
 )
 
-//////////////////////////////////////////////////////////////
-/*Topics*/************************************************Done_568 records
+------------------------------------------------------------------
+/*Topics*/
 create table Topics(
 Topic_ID int  primary key,
 Course_ID int,
 Topic_Name varchar(250),
 constraint C45 foreign key(Course_ID) references Courses(Course_ID)
 )
-///////////////////////////////////////////////////////////*****//////////
-/*Tracks*/*********************************Done_378 records
+--------------------------------------------------------------------
+/*Tracks*/
 create table Tracks(
 Track_ID int primary key,
 Track_Name  varchar(250),
@@ -146,21 +141,21 @@ Manager_ID  int,
 constraint C10 foreign key(Branch_ID) references Branches(Branch_ID),
 constraint C11 foreign key(Manager_ID) references Instructors(Inst_ID)
 )
-/////////////////////////////////////////////////////////
-/*Intake*/*************************************Done_50 records
+-----------------------------------------------------------------------
+/*Intake*/
 create table Intake(
 Intake_ID int  primary key,
 Intake_NO varchar(100)
 )
-////////////////////////////////////////////
-/*Round*/*****************************************Done_150 records
+------------------------------------------------------
+/*Round*/
 create table Rounds(
 Round_ID int  primary key,
 Round_NO varchar(100)
 )
-/////////////////////////////////////
+------------------------------------------------------------------------
 
-/*Students*/***********************************Done_400 records
+/*Students*/
 create table StudentsInfo(
 St_ID int  primary key,
 St_Fname  varchar(50),
@@ -183,8 +178,8 @@ constraint C3 foreign key(Fcode) references Faculty(Fcode),
 constraint C44 foreign key(Track_ID) references Tracks(Track_ID)
 
 )
-//////////////////////////////////
-/*Student Phone*/***********************************Done_400 records
+-------------------------------------------------------------
+/*Student Phone*/
 create table Student_Phone(
 St_ID int,
 Phone varchar(20),
@@ -192,8 +187,8 @@ constraint C31 foreign key(St_ID) references StudentsInfo(St_ID),
 constraint C32 primary key (St_ID,Phone),
 constraint C33 unique (St_ID,Phone)
 )
-//////////////////////////////////////////
-/*Track_Contains_Courses*/***********************************Done_90 records
+------------------------------------------------------------------
+/*Track_Contains_Courses*/
 create table Track_Contains_Courses(
 Track_ID int,
 Course_ID int,
@@ -202,7 +197,7 @@ constraint C14 foreign key(Track_ID) references Tracks(Track_ID),
 constraint C15 primary key (Track_ID,Course_ID)
 
 )
-////////////////////////////////
+------------------------------------------------------------------------------
 /*Student_enroll_in_intake*/
 create table Student_enroll_intake(
 St_ID int primary key ,
@@ -211,11 +206,7 @@ constraint C41 foreign key(St_ID) references StudentsInfo(St_ID),
 constraint C42 foreign key(Intake_ID) references Intake(Intake_ID),
 )
 
-
-
-
-
-/////////////////////////////////////
+-----------------------------------------------------------------------
 /*Student_enroll_in_Round*/
 create table Student_enroll_Round(
 St_ID int primary key ,
@@ -224,9 +215,7 @@ constraint C61 foreign key(St_ID) references StudentsInfo(St_ID),
 constraint C62 foreign key(Round_ID) references Rounds(Round_ID)
 )
 
-drop table student_enroll_round
-
-///////////////////////////////
+-------------------------------------------------------------------------
 
 
 /*Student_Answers_Exam*/
@@ -243,9 +232,7 @@ constraint C21 primary key (St_ID,Question_ID),
 
 )
 
-
-
-///////////////////////////////////////////
+---------------------------------------------------------------------
 /*Graduates*/
 create table Graduates(
 Graduate_ID int   primary key,
@@ -267,7 +254,7 @@ drop table graduates
 alter table Graduates
 add ITI_Graduation_Year int
 
-//////////////////////////////////////////////////////
+-----------------------------------------------------------
 create table Graduate_Phone
 (
 Graduate_ID int,
@@ -276,7 +263,7 @@ constraint Cfkkk foreign key(Graduate_ID) references Graduates(Graduate_ID),
 constraint Cpkkkk primary key (Graduate_ID,Phone),
 constraint Cfkkkk1 unique (Graduate_ID,Phone)
 )
-//////////////////////////////////////////////////////
+------------------------------------------------------------
 /*Graduate_Fail_Reasons*/
 create table Graduate_Fail_Reasons(
 Graduate_ID int,
@@ -286,7 +273,7 @@ constraint C29 primary key (FailReasons,Graduate_ID),
 
 )
 
-/////////////////////////////////////////////////
+-----------------------------------------------------------
 
 /*Student_Certificates*/
 create table Student_Certificates(
@@ -297,8 +284,7 @@ certificate_issue_date date,
 constraint C38 foreign key(St_ID) references StudentsInfo(St_ID)
 
 )
-///////////////////////////////////////////////////
-
+----------------------------------------------------------------------------
 /*GraduatesWorkCompany*/
 create table GraduatesWorkCompany(
 Graduate_ID int  primary key,
@@ -306,7 +292,7 @@ Company_code varchar(250),
 constraint C39 foreign key(Company_code) references Graduate_company(Company_code),
 constraint C40 foreign key(Graduate_ID) references Graduates(Graduate_ID)
 )
-//////////////////////////////////////////////////////
+---------------------------------------------------------------------------
 
 /*ExamQuestionGeneration*/
 CREATE TABLE Exam_Quest_Generation
@@ -318,7 +304,7 @@ PRIMARY KEY (Exam_ID,Question_ID),
 constraint C100 foreign key(Exam_ID) references Exams(Exam_ID),
 constraint C101 foreign key(Question_ID) references Questions(Question_ID)
 );
-
+---------------------------------------------------------------------------
 /*Student_Takes_Exam*/
 create table Student_Takes_Exam
 (St_ID int,
@@ -332,13 +318,7 @@ alter table Student_Takes_Exam
 add St_Status varchar(50) check (St_Status = 'Passed' or
 St_Status = 'Failed')
 
-
-
-//////////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////
+-------------------------------------------------------------
 
 //Good Luck! :)
 
